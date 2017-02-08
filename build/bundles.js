@@ -106,7 +106,7 @@ function doIt (options, sayAloud) {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h2></h2>\n  <p></p>\n  <input type=\"text\" ng-model=\"$ctrl.userInput\">\n  <pre>\n    {{ $ctrl.getMeow($ctrl.userInput) }}\n  </pre>\n</div>\n";
+module.exports = "<div>\n  <h2>{{ $ctrl.title }}</h2>\n  <p></p>\n  <input type=\"text\" ng-model=\"$ctrl.userInput\">\n  <button ng-click=\"$ctrl.add()\"> Get Meow Text</button>\n  <button ng-click=\"$ctrl.undo()\"> Undo Meow Text</button>\n  <pre>\n    {{ $ctrl.getMeow($ctrl.userInput) }}\n  </pre>\n    <pre>\n      {{ $ctrl.newKitty() }}\n    </pre>\n</div>\n";
 
 /***/ }),
 /* 3 */
@@ -34027,16 +34027,32 @@ process.umask = function() { return 0; };
 const angular = __webpack_require__(0);
 const meowSay = __webpack_require__(1);
 
-angular.module('demoApp', []).component('meowsay', {
+angular.module('meowApp', []).component('meowsay', {
   template: __webpack_require__(2),
   controller: ['$log', function ($log) {
     this.$onInit = function () {
       this.title = 'Meow, meow, meow';
       this.userInput = '';
+      this.newStuff = '';
+      let meowPut = [];
       this.getMeow = function (text) {
         $log.log('testing', text);
         return meowSay.say({ text: text || 'meowmix meowmix please deliver', f: 'kitty' });
       };
+    };
+    this.newKitty = function () {
+      $log.log('New Meower meowput: ', this.newStuff);
+      return meowSay.say({ text: text || 'meowmix meowmix please deliver', f: 'hellokitty' });
+    };
+    this.add = function () {
+      meowPut.push(this.meowPut);
+      this.newStuff = meowPut[meowPut.length - 1];
+      return this.newKitty();
+    };
+    this.undo = function () {
+      meowPut.pop();
+      this.newStuff = meowPut[meowPut.length - 1];
+      return this.newKitty();
     };
   }]
 });

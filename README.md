@@ -12,3 +12,4 @@ Modules are containers for the different parts of your app – controllers, serv
 
 
 ##Controllers
+AngularJS controllers control the data of AngularJS application.

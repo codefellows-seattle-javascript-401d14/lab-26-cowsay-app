@@ -9,17 +9,22 @@ angular.module('cowsayApp', [])
   controller: ['$log', function($log){
     this.$onInit = function(){
       this.title = 'cowsay app';
+      this.history = [];
+      this.current = '';
       this.userInput = '';
-      this.update = function(input) {
-        return cowsay.say({ text: input || 'moooooooo', f: this.current });
-      };
-      this.undo = function() {
-        this.history.pop();
-        this.spoken = this.history.pop() || '';
-      };
       this.getCow = function(text){
         $log.log('test was', text);
         return cowsay.say({text: text || 'Hello friend.'});
+      };
+      this.saveCow = function() {
+        $log.log('saveCow');
+        this.history.push(this.getCow(this.userInput));
+        this.current = this.history[this.history.length - 1];
+      };
+      this.undoCow = function() {
+        $log.log('undoCow');
+        this.history.pop();
+        this.current = this.history[this.history.length - 1];
       };
     };
   }],

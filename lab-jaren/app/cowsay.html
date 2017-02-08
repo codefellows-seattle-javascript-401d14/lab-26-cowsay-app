@@ -1,0 +1,9 @@
+<div>
+  <h2> {{ $ctrl.title }} </h2>
+  <p> bayoo </p>
+  <input type="text" ng-model="$ctrl.userInput">
+  <button ng-click="$ctrl.currentState()">current</button>
+  <button ng-click="$ctrl.prevState()">previous</button>
+  <pre> {{ $ctrl.getCow($ctrl.userInput) }} </pre>
+  <pre> {{ $ctrl.copyCat() }} </pre>
+</div>

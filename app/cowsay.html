@@ -1,0 +1,15 @@
+<div>
+  <h3> {{ $ctrl.title }} </h3>
+  <p>cowsay</p>
+  <input type="text" ng-model="$ctrl.userInput">
+  <button type="button" ng-click="$ctrl.userInput"></button>
+  <pre>
+  {{ $ctrl.getCow($ctrl.userInput) }}
+  </pre>
+  <pre>
+  {{ $ctrl.getCow($ctrl.userInputCopy) }}
+  </pre>
+  <pre>
+  {{ $ctrl.getCow($ctrl.userInput) }}
+  </pre>
+</div>

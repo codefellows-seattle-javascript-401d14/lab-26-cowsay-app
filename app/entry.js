@@ -10,6 +10,13 @@ angular.module('cowsayApp', [])
     this.$onInit = function(){
       this.title = 'cowsay app';
       this.userInput = '';
+      this.update = function(input) {
+        return cowsay.say({ text: input || 'moooooooo', f: this.current });
+      };
+      this.undo = function() {
+        this.history.pop();
+        this.spoken = this.history.pop() || '';
+      };
       this.getCow = function(text){
         $log.log('test was', text);
         return cowsay.say({text: text || 'Hello friend.'});

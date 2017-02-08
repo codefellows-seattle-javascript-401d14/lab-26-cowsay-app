@@ -2,7 +2,7 @@
   "name": "lab-26-cowsay-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "entry.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "build": "./node_modules/webpack/bin/webpack.js",

@@ -1,0 +1,12 @@
+<div>
+
+  <h2>{{ $ctrl.title }}</h2>
+  <p>  {{ $ctrl.name }}  </p>
+
+  <input type="text" ng-model="$ctrl.userInput">
+  <pre>
+    {{ $ctrl.getCow($ctrl.userInput) }}
+
+  </pre>
+
+</div>

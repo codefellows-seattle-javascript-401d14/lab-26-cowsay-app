@@ -12,9 +12,12 @@ angular.module('cowsayApp', [])
       this.history = [];
       this.current = '';
       this.userInput = '';
-      this.getCow = function(text){
-        $log.log('test was', text);
-        return cowsay.say({text: text || 'Hello friend.'});
+      this.getCow = function(text, f){
+        $log.log('test was', text, f);
+        return cowsay.say({
+          text: text || 'Hello friend.',
+          f: 'stimpy',
+        });
       };
       this.saveCow = function() {
         $log.log('saveCow');

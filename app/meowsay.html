@@ -1,0 +1,15 @@
+<div>
+  <h2>{{ $ctrl.title }}</h2>
+  <p>Too many cats...</p>
+  <input type="text" ng-model="$ctrl.userInput">
+  <!-- extra credit button functionality added -->
+  <button ng-click="$ctrl.add()"> Get Meow Text</button>
+  <button ng-click="$ctrl.undo()"> Undo Meow Text</button>
+  <pre>
+    {{ $ctrl.getMeow($ctrl.userInput) }}
+  </pre>
+    <pre>
+      <!-- additional template for extra credit -->
+      {{ $ctrl.newKitty() }}
+    </pre>
+</div>

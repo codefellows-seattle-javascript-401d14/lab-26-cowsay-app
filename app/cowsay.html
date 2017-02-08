@@ -1,0 +1,8 @@
+<div>
+  <h3>{{$ctrl.title}}</h3>
+  <p>This is what I cow says</p>
+  <input type="text" ng-model="$ctrl.userInput">
+  <pre>
+    {{$ctrl.getCowText($ctrl.userInput)}}
+  </pre>
+</div>

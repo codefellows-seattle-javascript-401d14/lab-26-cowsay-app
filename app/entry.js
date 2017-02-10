@@ -16,7 +16,7 @@ angular.module('cowsayApp', [])
         $log.log('test was', text, f);
         return cowsay.say({
           text: text || 'Hello friend.',
-          f: 'stimpy',
+          f: 'daemon',
         });
       };
       this.saveCow = function() {

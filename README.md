@@ -1,4 +1,9 @@
-## Angular Modules, Components and Controllers
-  * module is the angular app.
-  * components is a new resource where you define the template, controllers and other data.
-  * controllers have an Array and a function.
+# Lab-26 Cowsay App w/ Angular and Webpack
+
+## Angular
+- modules (cowApp)
+  - contains all the Angular stuff
+- components (cowsay)
+  - holds the template and controllers that define a custom tag in the HTML
+- controllers
+  - an array of functions that define how a component changes state
